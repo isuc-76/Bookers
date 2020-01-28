@@ -1,17 +1,17 @@
 <h2>Books</h2>
 <div class="clearfix">
 
-
+  
   <div class="book-title">
+  	<p class="name">title</p>
 	<% @books.each do |book| %>
-		<p>title</p>
 		<span><%= book.title %></span>
 	<% end %>
   </div>
 
   <div class="book-body">
+  	<p class="name">body</p>
 	<% @books.each do |book| %>
-		<p>body</p>
 		<span><%= book.body %></span>
 	<% end %>
   </div>

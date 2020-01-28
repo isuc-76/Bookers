@@ -27,8 +27,14 @@
 }
 
 .book-title {
+	display: block;
 	float: left;
 }
+
 .book-body {
+	display: block;
 	float: left;
+}
+.name:not(:first-child) {
+	display: none;
 }
