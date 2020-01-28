@@ -1,24 +1,20 @@
 <h2>Books</h2>
 <div class="clearfix">
 
-  <table class="table">
-  	<th>Title</th>
-  	<th>Body</th>
-  	<th></th>
-  </table>
+  <!-- tableを使う？ -->
+  <div class="book-title">
+  	<p class="name">title</p>
+	<% @books.each do |book| %>
+	<%= book.title 	%><br>
+	<% end %>
+  </div>
 
-  <table class="table">
-  	<th>
-  		<% @books.each do |book| %>
-		<%= book.title %>
-		<% end %>
-	</th>
-  	<th>
-  		<% @books.each do |book| %>
-		<%= book.body %>
-	    <% end %>
-  	</th>
-  	<th></th>
-  </table>
+  <div class="book-body">
+  	<p class="name">body</p>
+	<% @books.each do |book| %>
+	<%= book.body %><br>
+	<% end %>
+  </div>
+
 
 </div>
