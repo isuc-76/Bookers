@@ -1,16 +1,20 @@
 <h2>Books</h2>
+<div class="clearfix">
 
-<section class="blog">
-      <h2 class="blog-headline">Recent Blogs</h2>
-      <div class="blog-box">
-        <% @books.each do |blog| %>
-          <div class="blog-item clearfix">
-            <section class="blog-text">
-              <h3 class="blog-text-headline"><%= link_to book.title, book_path(book) %></h3>
-              <p class="blog-date"><%= book.created_at %></p>
-              <span class="category"><%= book.category %></span>
-            </section>
-          </div>
-        <% end %>
-      </div>
-</section>
+
+  <div class="book-title">
+	<% @books.each do |book| %>
+		<p>title</p>
+		<span><%= book.title %></span>
+	<% end %>
+  </div>
+
+  <div class="book-body">
+	<% @books.each do |book| %>
+		<p>body</p>
+		<span><%= book.body %></span>
+	<% end %>
+  </div>
+
+
+</div>
