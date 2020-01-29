@@ -26,6 +26,12 @@
 <h3 class="new">New book</h3>
 <%= form_for(@book) do |f| %>
   
+  <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
   <% if @book.errors.any? %>
     <div class="error">
       <p>
