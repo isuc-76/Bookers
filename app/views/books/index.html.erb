@@ -1,3 +1,7 @@
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
 <h2>Books</h2>
 
 <table>
@@ -14,9 +18,9 @@
       <tr>
         <td><%= book.title %></td>
 		<td><%= book.body %></td>
-        <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Show", book_path(book) %></td>
+        <td><%= link_to "Edit", edit_book_path(book) %></td>
+        <td><%= link_to "Destroy", book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,14 +28,8 @@
 
 
 <h3 class="new">New book</h3>
-<%= form_for(@book) do |f| %>
+<%= form_for(@book,url:"/books") do |f| %>
   
-  <% if flash[:notice] %>
-      <div class="flash">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
-
   <% if @book.errors.any? %>
     <div class="error">
       <p>
