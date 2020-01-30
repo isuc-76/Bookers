@@ -1,7 +1,10 @@
+<div class="successfully">
 <% if flash[:notice] %>
   <p><%= flash[:notice] %></p>
 <% end %>
+</div>
 
+<div class="index">
 <h2>Books</h2>
 
 <table>
@@ -16,23 +19,26 @@
   <tbody>
   	<% @books.each do |book| %>
       <tr>
-        <td><%= book.title %></td>
-		<td><%= book.body %></td>
-        <td><%= link_to "Show", book_path(book) %></td>
-        <td><%= link_to "Edit", edit_book_path(book) %></td>
-        <td><%= link_to "Destroy", book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="tb"><%= book.title %></td>
+		    <td class="tb"><%= book.body %></td>
+
+        <td class="tb"><%= link_to "Show", book_path(book) %></td>
+        <td class="tb"><%= link_to "Edit", edit_book_path(book) %></td>
+        <td class="tb"><%= link_to "Destroy", book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
-
-<h3 class="new">New book</h3>
+<div class="new">
+<h3 class="new-title">New book</h3>
 <%= form_for(@book,url:"/books") do |f| %>
   
   <% if @book.errors.any? %>
     <div class="error">
-      <p>
+      <p class="error-top">
         <%= pluralize(@book.errors.count, "error") %> 
         prohibited this book from being saved:
       </p>
@@ -44,12 +50,13 @@
   </div>
   <% end %>
 
-	<h4>Title</h4>
+	<p>Title</p>
     <%= f.text_field :title %>
  
-    <h4>Body</h4>
+    <p>Body</p>
     <%= f.text_area :body %><br>
  
     <%= f.submit 'Create Book' %>
  
 <% end %>
+</div>
